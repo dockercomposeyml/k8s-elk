@@ -1,0 +1,13 @@
+apiVersion: vi
+kind: LimitRange
+metadata:
+  name: es-limits
+spec:
+  limits:
+    - max:
+        memory: 512Mi
+        cpu:  800m
+      min:
+        memory: 256Mi
+        cpu: 200m
+      type: Container
