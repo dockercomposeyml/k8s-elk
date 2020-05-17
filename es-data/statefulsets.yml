@@ -5,7 +5,7 @@ metadata:
   labels:
     role: data
 spec:
-  serviceName: es-data
+  serviceName: es-master
   replicas: 1
   selector:
     matchLabels:
@@ -63,8 +63,9 @@ spec:
             - key: elasticsearch.yml
               path: elasticsearch.yml
       - name: es-data-dir
-        persistentVolumeClaim:
-          claimName: es-data
+        #       persistentVolumeClaim:
+        #          claimName: es-data
+        emptyDir: {}
             
 
         

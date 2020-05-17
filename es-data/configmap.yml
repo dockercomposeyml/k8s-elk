@@ -6,7 +6,7 @@ metadata:
     role: data
 data:
   elasticsearch.yml: |
-    cluster.name: "Super-Man"
+    cluster.name: "SuperGun"
     bootstrap.memory_lock: False
     network.host: "0.0.0.0"
     discovery.zen.ping.unicast.hosts: es-master
