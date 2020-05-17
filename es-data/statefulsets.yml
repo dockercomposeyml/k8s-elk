@@ -50,6 +50,8 @@ spec:
         - containerPort: 9300
           name: es-transport
         volumeMounts:
+        - name: es-data-dir
+          mountPath: /usr/share/elasticsearch/data
         - name: es-data-config
           mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
           subPath: elasticsearch.yml
@@ -60,6 +62,11 @@ spec:
           items:
             - key: elasticsearch.yml
               path: elasticsearch.yml
+      - name: es-data-dir
+        persistentVolumeClaim:
+          claimName: es-data
+            
+
         
 
 
