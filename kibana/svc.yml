@@ -8,4 +8,3 @@ spec:
   ports:
   - port: 8080
     targetPort: 5601
-  type: NodePort

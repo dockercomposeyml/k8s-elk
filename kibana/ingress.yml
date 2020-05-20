@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kibana
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /app/kibana
+        backend:
+          serviceName: kibana
+          servicePort: 8080
