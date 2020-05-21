@@ -1,3 +1,31 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kibana
+spec:
+  selector:
+    app: kibana
+  ports:
+  - port: 8080
+    targetPort: 5601
+  type: NodePort
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kibana
+data:
+  kibana.yml: |
+    ---
+    server.name: kibana
+    server.host: "0.0.0.0"
+    server.basePath: "/api/v1/proxy/namespaces/kibana/services/kibana-logging"
+    elasticsearch.url: http://es-service:8080
+    elasticsearch.ssl.verificationMode: none
+    status.allowAnonymous: true
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
