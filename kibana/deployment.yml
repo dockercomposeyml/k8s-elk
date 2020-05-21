@@ -19,7 +19,18 @@ spec:
         image: docker.elastic.co/kibana/kibana:6.5.0
         env:
           - name: ELASTICSEARCH_URL
-            value: http://es-service:9200
+            value: http://es-service:8080
         ports:
         - containerPort: 5601
+        volumeMounts:
+        - name: kib-config
+          mountPath: /usr/share/kibana/config/kibana.yml
+          subPath: kibana.yml
+      volumes:
+      - name: "kib-config"
+        configMap:
+          name: kibana
+          items:
+          - key: kibana.yml
+            path: kibana.yml
 
