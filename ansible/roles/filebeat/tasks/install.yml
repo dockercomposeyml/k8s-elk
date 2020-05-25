@@ -2,7 +2,11 @@
   apt:
     name: "filebeat={{ filebeat_version }}"
     state: present
-  notify: restart filebeat
+  notify: Restart Filebeat
+
+- name: Mark Hold To The Filebeat Package ( Avoids Accidental Upgrades )
+  command: apt-mark hold filebeat
+  register: markoutput
 
 - name: Create main Filebeat config
   template:
@@ -11,6 +15,6 @@
     owner: root
     group: root
     mode: 0600
-  notify: systemd reload
+  notify: Systemd Reload
 
 
