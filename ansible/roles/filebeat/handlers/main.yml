@@ -10,4 +10,4 @@
     name: filebeat.service
     state: restarted
     enabled: yes
-    masked: yes
+    #  masked: yes

@@ -16,7 +16,8 @@
 
 filebeat.inputs:
 - type: {{ input_type }}
-  paths: {{ paths }}
+  paths:
+  - /var/log/*.log
   
   #exclude_lines: {{ exclude_lines }}
   #include_lines: {{ include_lines }}
