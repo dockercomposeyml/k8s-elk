@@ -9,6 +9,10 @@
     repo: "{{ repo_url }}"
     state: present
 
+- name: Update Apt Repo And Cache
+  apt: 
+    update_cache: yes 
+    cache_valid_time: 3600
 # -----------Installing Pre-Required Packages
 
 - name: Install Pre-Required Packages

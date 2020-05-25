@@ -34,7 +34,7 @@ filebeat.inputs:
 #============================= Filebeat modules ===============================
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
-  reload.enabled: {{ relaod_enabled }}
+  reload.enabled: {{ reload_enabled }}
   {% if reload_enabled %}
   reload.period: {{ reload_period }}
   {% endif %}

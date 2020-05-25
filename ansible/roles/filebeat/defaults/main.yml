@@ -2,7 +2,7 @@
 # defaults file for filebeat
 # ---Install Essential Defaults -----------------
 version: "7.x"
-filebeat_version: "7.7"
+filebeat_version: "7.7.*"
 key_url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
 repo_url: "deb https://artifacts.elastic.co/packages/{{version}}/apt stable main" 
 
@@ -17,10 +17,10 @@ exclude_files: ['.gz$']
 
 #-----------------Kafka Hosts --------------------
 kafka_broker_hosts: []
-  - broker1
-  - broker2 
-  - broker3
-
+#  - broker1
+#  - broker2 
+#  - broker3
+#
 kafka_broker_port: 9092
 kafka_topic: "test_topic"
 kafka_compression: gzip
