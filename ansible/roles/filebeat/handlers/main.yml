@@ -1,10 +1,10 @@
 ---
 - name: Reload Systemd
+  become: yes
   systemd:
     daemon_reload: yes
 
----
-- name: restart filebeat
+- name: Restart Filebeat
   become: yes
   systemd:
     name: filebeat.service
