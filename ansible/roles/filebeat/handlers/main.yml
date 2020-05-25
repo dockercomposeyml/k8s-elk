@@ -1,2 +1,13 @@
 ---
-# handlers file for filebeat
+- name: Reload Systemd
+  systemd:
+    daemon_reload: yes
+
+---
+- name: restart filebeat
+  become: yes
+  systemd:
+    name: filebeat.service
+    state: restarted
+    enabled: yes
+    masked: yes

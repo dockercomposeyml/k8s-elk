@@ -1,0 +1,16 @@
+- name: Install Filebeat package
+  apt:
+    name: "filebeat={{ filebeat_version }}"
+    state: present
+  notify: restart filebeat
+
+- name: Create main Filebeat config
+  template:
+    src: "filebeat.service.j2"
+    dest: "/lib/systemd/system/filebeat.service"
+    owner: root
+    group: root
+    mode: 0600
+  notify: systemd reload
+
+

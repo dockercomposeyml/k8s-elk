@@ -1,2 +1,9 @@
 ---
-# tasks file for filebeat
+- name: Installing Pre-Requisites
+  include: pre-reqs.yml
+
+- name: Installing Filebeat 
+  include: install.yml
+
+- name: Configuring Filebeat
+  include: configure.yml 
