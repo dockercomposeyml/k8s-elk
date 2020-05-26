@@ -1,2 +1,9 @@
 ---
-# tasks file for logstash
+- name: Installing Pre-Requisites
+  include: pre-reqs.yml
+
+- name: Installing Logstash 
+  include: install.yml
+
+- name: Configuring Logstash
+  include: configure.yml 
