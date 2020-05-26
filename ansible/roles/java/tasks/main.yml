@@ -1,2 +1,7 @@
 ---
-# tasks file for java
+- name: Install Java
+  include: install.yml
+
+- name: Configure Java
+  include: configure.yml
+
