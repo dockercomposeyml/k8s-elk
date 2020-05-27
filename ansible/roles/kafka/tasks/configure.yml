@@ -36,4 +36,15 @@
     mode: 0600
   notify: Reload Systemd
 
+- name: Start Zookeeper
+  systemd:
+    name: zookeeper.service
+    state: started
+
+- name: Start Kafka
+  systemd:
+    name: kafka.service
+    state: started
+
+
 
