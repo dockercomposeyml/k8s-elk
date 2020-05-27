@@ -1,3 +1,6 @@
 ---
 - name: Install Kafka
-  include: pre-reqs.yml
+  include: install.yml
+
+- name: Configure Kafka
+  include: configure.yml
