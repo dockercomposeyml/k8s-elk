@@ -1,0 +1,9 @@
+---
+- hosts: target
+  remote_user: root
+  gather_facts: yes
+  vars:
+          character: "client"
+          node_class: "small"
+  roles:
+  - logstash
